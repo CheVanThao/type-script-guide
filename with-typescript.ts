@@ -3,7 +3,7 @@ let course: string | number = 'React - The complete Guide'
 
 course = 12341
 
-// type Aliases 
+// type Aliases :: loại bí danh
 
 type Person = {
     name: string,
@@ -13,4 +13,13 @@ type Person = {
 const person: Person = {
     name: 'thao',
     age: 26
+}
+
+// function and type
+function addTwoNumber(a: number, b: number) {
+    return a + b;
+}
+
+function printOutput(value: any) {
+    console.log(value);
 }
