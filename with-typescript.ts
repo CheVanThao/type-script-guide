@@ -23,3 +23,25 @@ function addTwoNumber(a: number, b: number) {
 function printOutput(value: any) {
     console.log(value);
 }
+
+// generic type : loại chung ( chuẩn loại, loài )
+function insertAtBeginning(array: any[], value: any) {
+    const newArray = [value, ...array]
+    return newArray
+}
+
+const demoArray = [1, 2, 3];
+const updatedArray = insertAtBeginning(demoArray, -1) // [-1, 1, 2, 3]
+// nó sẽ không nhận dạng được đâu là string hay number hay array
+updatedArray[0].split('')
+
+function insertAtBeginning2<T>(array: T[], value: T) {
+    const newArray = [value, ...array]
+    return newArray
+}
+
+const demoArray2 = [1, 2, 3];
+const updatedArray2 = insertAtBeginning2(demoArray, -1) // [-1, 1, 2, 3]
+
+const stringArray = insertAtBeginning2(['a', 'b', 'c'], 'd')
+// updatedArray2[0].split('')
