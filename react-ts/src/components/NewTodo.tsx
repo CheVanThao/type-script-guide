@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-const NewTodo = () => {
+const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = (props) => {
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
     // current? khi chưa dùng hay k có giá trị sẽ tự động gắn null
@@ -10,6 +10,8 @@ const NewTodo = () => {
     if (enteredText.trim().length === 0) {
       return;
     }
+
+    props.onAddTodo(enteredText);
   };
 
   const todoTextInput = useRef<HTMLInputElement>(null);
