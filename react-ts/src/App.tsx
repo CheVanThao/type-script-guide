@@ -5,13 +5,18 @@ import Todos from "./components/Todos";
 import Todo from "./model/todo";
 
 function App() {
-  const [todos, setTodos] = useState([
+  const [todos, setTodos] = useState<Todo[]>([
     new Todo("learn React"),
     new Todo("Learn TypeScript"),
   ]);
 
-  const addNewTodoHandler = (newTodo: string) => {
+  const addNewTodoHandler = (todoText: string) => {
+    const newTodo = new Todo(todoText)
     // setTodos((preState) => [...preState, newTodo]);
+
+    setTodos((prev) => {
+      return prev.concat(newTodo)
+    })
   };
 
   return (
