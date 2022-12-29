@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import classes from './NewTodo.module.css'
 
-const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = (props) => {
+const NewTodo: React.FC<{ onAddTodo: (text: string) => void}> = (props) => {
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
     // current? khi chưa dùng hay k có giá trị sẽ tự động gắn null
